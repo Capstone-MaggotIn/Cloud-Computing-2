@@ -11,7 +11,7 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Panggil init_model saat aplikasi diinisialisasi
-init_model()
+init_model(app)
 
 # Menambahkan blueprint ke aplikasi Flask
 app.register_blueprint(predict_routes)
@@ -19,16 +19,22 @@ app.register_blueprint(predict_routes)
 # Menangani error dan mengubah respons jika terjadi error
 @app.after_request
 def after_request(response):
-    """
-    Fungsi untuk menangani respons setelah request selesai diproses.
-    Menambahkan logika error handling jika ada kesalahan.
-    """
     if response.status_code >= 400:
-        # Menangani error dan mengubah respons jika statusnya 4xx atau 5xx
-        return jsonify({
-            "status": "fail",
-            "message": response.get_data(as_text=True)  # Menyertakan pesan error
-        }), response.status_code
+        try:
+            original_data = response.get_json()  # Ambil respons JSON asli
+        except Exception:
+            original_data = {"message": "An error occurred"}  # Default jika tidak ada JSON
+
+        # Ubah format respons JSON dengan status fail
+        response = make_response(
+            jsonify(
+                {
+                    "status": "fail",
+                    "message": original_data.get("message", "An error occurred"),
+                }
+            ),
+            response.status_code,
+        )
     return response
 
 # Route default
@@ -40,5 +46,4 @@ def index():
     }, 200
 
 if __name__ == "__main__":
-    # Menjalankan server
-    app.run(host="localhost", port=3000, debug=True)
+    app.run(host="localhost", port=3000, debug=True, use_reloader=False)  # Disable reloader
