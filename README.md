@@ -1,4 +1,4 @@
-# Image Prediction API Backend for MaggotIn App
+# Image Prediction API Backend for MaggotIn App 🐛
 This project implements a backend API for image prediction of maggots. The application uses `Flask` for handling web requests and `TensorFlow` for the prediction model.
 
 ## Cloud Computing Team 
@@ -22,6 +22,7 @@ PROJECT ROOT
 │       ├── initModel.py    
 │   	├── loadModel.py      
 │      	└── storeData.py                                
+├── app.py
 ├── myenv
 ├── .env                           
 ├── .gitignore                     
@@ -31,9 +32,10 @@ PROJECT ROOT
 README.md
 ```
 ## Project Setup
+if python is not yet installed, you can download and install it from ![Python] <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" /> </a>
 
 ```bash
-# check python version. if Python is not yet installed, you can download and install it from the https://www.python.org/
+# check python version.
 $ python --version
 
 # install virtual environment
@@ -65,19 +67,19 @@ To set up and deploy the backend model application, first clone the source code 
 ## Endpoint
   <pre>POST /predict</pre>
 
-- Testing uses Postman 
+### Request 
 * Endpoint  : /predict
 * Method    : POST
 * Example Request
 
 ```
-POST /predict
 Content-Type: multipart/form-data
 
 image: [maggot_image.jpg]
 
 ```
-* Status Code  : 200
+### Response
+* Status Code  : '200'
 * Content Type : application/json
 * Result Response
  
