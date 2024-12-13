@@ -70,8 +70,7 @@ $ python app.py
 ```
 
 ## Deployment
-To set up and deploy the backend model application, first clone the source code from the specified GitHub repository and navigate to the project directory. Create a `Dockerfile` to define the container configuration details can be found at [Dockerfile](https://github.com/Capstone-MaggotIn/Cloud-Computing-2/blob/master/Dockerfile)
-- Run the app. Ensure that the required Google Cloud APIs, including Artifact Registry, Cloud Build, and Cloud Run, are enabled. Next, create an Artifact Registry repository to store the Docker image. Build the container image using the `Dockerfile`, then upload it to Artifact Registry using the `gcloud builds submit` command. Finally, deploy the application to Cloud Run using the created container image for scalable and serverless hosting with the `gcloud run deploy` command.
+To set up and deploy the backend model application, first clone the source code from the specified GitHub repository and navigate to the project directory. Create a `Dockerfile` to define the container configuration details can be found at [Dockerfile](https://github.com/Capstone-MaggotIn/Cloud-Computing-2/blob/master/Dockerfile). Ensure that the required Google Cloud APIs, including Artifact Registry, Cloud Build, and Cloud Run, are enabled. Next, create an Artifact Registry repository to store the Docker image. Build the container image using the `Dockerfile`, then upload it to Artifact Registry using the `gcloud builds submit` command. Finally, deploy the application to Cloud Run using the created container image for scalable and serverless hosting with the `gcloud run deploy` command.
 
 ## Endpoint
   <pre>POST /predict</pre>
@@ -88,8 +87,8 @@ image: [maggot_image.jpg]
 
 ```
 ### Response
-* Status Code  : '200'
-* Content Type : application/json
+* Status Code  : `200`
+* Content Type : `application/json`
 * Result Response
  
 ```
@@ -114,8 +113,8 @@ image: [maggot_image.jpg]
 
 ## Resources
 * [Planning costs via Google Cloud Pricing Calculator](https://cloud.google.com/products/calculator?hl=en&dl=CjhDaVJtWldGaU16Y3lPUzFqWXpJekxUUTVOR1l0WVdFME5TMHpZelZtWWpBd016Z3lNR1FRQVE9PRAHGiRDRDFBRTI1My1FNjk5LTQ5QjMtOTU3NC1GNURBMkJDMjQ5QUU)
-* [Cloud Architecture] (https://drive.google.com/file/d/1wp_0DqtgxlcqHYI-55JiAsqNzVaytXrJ/view?usp=sharing)
-* [Flask Documentation] (https://flask.palletsprojects.com/en/stable/)
+* [Cloud Architecture](https://drive.google.com/file/d/1wp_0DqtgxlcqHYI-55JiAsqNzVaytXrJ/view?usp=sharing)
+* Visit the [Flask Documentation](https://flask.palletsprojects.com/en/stable/) to learn more about the framework
 
 ## License
 This repository's source code is available under [MIT License](https://opensource.org/licenses/MIT).
