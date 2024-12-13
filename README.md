@@ -32,10 +32,11 @@ PROJECT ROOT
 README.md
 ```
 ## Project Setup
-if python is not yet installed, you can download and install it from ![Python] <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" /> </a>
+If Python is not yet installed, you can download and install it from [![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org).
 
+#### Install
 ```bash
-# check python version.
+# check python version
 $ python --version
 
 # install virtual environment
@@ -50,19 +51,27 @@ $ myenv\Scripts\activate
 # install flask
 $ pip install flask
 ```
-## Install Project Dependencies
+#### Clone Project
+
+```bash
+https://github.com/Capstone-MaggotIn/Cloud-Computing-2.git
+```
+#### Install Project Dependencies
 
 ```bash
 $ pip install -r requirements.txt
 ```
 ## Run the Application
+- Edit .env files and specify with your [env.examples](https://github.com/Capstone-MaggotIn/Cloud-Computing-2/blob/master/env.example)
+- Run the app
 
 ```bash
 $ python app.py
 ```
 
 ## Deployment
-To set up and deploy the backend model application, first clone the source code from the specified GitHub repository and navigate to the project directory. Create a `Dockerfile` to define the container configuration details can be found at [.Dockerfile](./.Dockerfile). Ensure that the required Google Cloud APIs, including Artifact Registry, Cloud Build, and Cloud Run, are enabled. Next, create an Artifact Registry repository to store the Docker image. Build the container image using the `Dockerfile`, then upload it to Artifact Registry using the `gcloud builds submit` command. Finally, deploy the application to Cloud Run using the created container image for scalable and serverless hosting with the `gcloud run deploy` command.
+To set up and deploy the backend model application, first clone the source code from the specified GitHub repository and navigate to the project directory. Create a `Dockerfile` to define the container configuration details can be found at [Dockerfile](https://github.com/Capstone-MaggotIn/Cloud-Computing-2/blob/master/Dockerfile)
+- Run the app. Ensure that the required Google Cloud APIs, including Artifact Registry, Cloud Build, and Cloud Run, are enabled. Next, create an Artifact Registry repository to store the Docker image. Build the container image using the `Dockerfile`, then upload it to Artifact Registry using the `gcloud builds submit` command. Finally, deploy the application to Cloud Run using the created container image for scalable and serverless hosting with the `gcloud run deploy` command.
 
 ## Endpoint
   <pre>POST /predict</pre>
@@ -102,6 +111,11 @@ image: [maggot_image.jpg]
 * [Flask-Cors](https://pypi.org/project/Flask-Cors/)
 * [Python-DotEnv](https://pypi.org/project/python-dotenv/)
 * [Mysql-Connector](https://pypi.org/project/mysql-connector-python/)
+
+## Resources
+* [Planning costs via Google Cloud Pricing Calculator](https://cloud.google.com/products/calculator?hl=en&dl=CjhDaVJtWldGaU16Y3lPUzFqWXpJekxUUTVOR1l0WVdFME5TMHpZelZtWWpBd016Z3lNR1FRQVE9PRAHGiRDRDFBRTI1My1FNjk5LTQ5QjMtOTU3NC1GNURBMkJDMjQ5QUU)
+* [Cloud Architecture] (https://drive.google.com/file/d/1wp_0DqtgxlcqHYI-55JiAsqNzVaytXrJ/view?usp=sharing)
+* [Flask Documentation] (https://flask.palletsprojects.com/en/stable/)
 
 ## License
 This repository's source code is available under [MIT License](https://opensource.org/licenses/MIT).
