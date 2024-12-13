@@ -10,6 +10,13 @@ This project implements a backend API for image prediction of maggots. The appli
 ## APIs Services
 - Predict Maggot Image
 
+## Google Cloud Platform Services
+- Cloud SQL with database engine MySQL
+- Cloud Storage
+- Cloud Run
+- Artifact Registry
+- Secret Manager
+
 ## Project Structure
 ```bash
 PROJECT ROOT
@@ -32,7 +39,7 @@ PROJECT ROOT
 README.md
 ```
 ## Project Setup
-If Python is not yet installed, you can download and install it from [![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org).
+If Python is not yet installed, you can download and install it from [official python website](https://www.python.org/)
 
 #### Install
 ```bash
